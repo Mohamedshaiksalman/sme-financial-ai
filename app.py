@@ -49,14 +49,17 @@ if uploaded_file:
     # -------- Dashboard ----------
     st.subheader("📈 Key Metrics")
 
-    c1, c2, c3, c4 = st.columns(4)
+    c1, c2, c3, c4, c5 = st.columns(5)
     c1.metric("Total Revenue", f"{total_revenue:,}")
     c2.metric("Total Profit", f"{total_profit:,}")
     c3.metric("Profit Margin %", round(profit_margin, 2))
-    c4.metric("Risk Level", risk)
+    c4.metric("Expense Ratio %", round(expense_ratio, 2))
+    c5.metric("Debt Ratio %", round(debt_ratio, 2))
 
     st.progress(score / 100)
     st.write(f"Financial Health Score: **{score}/100**")
+    st.write(f"### Risk Level: {risk}")
+
 
     # -------- Chart ----------
     st.subheader("📉 Revenue vs Expenses Trend")
